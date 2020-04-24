@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "edge": "15",
+          "firefox": "40",
+          "chrome": "40",
+          "safari": "10"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-private-methods",
+    ["@babel/plugin-proposal-pipeline-operator", { "proposal": "minimal" }],
+    "react-hot-loader/babel"
+  ]
+}

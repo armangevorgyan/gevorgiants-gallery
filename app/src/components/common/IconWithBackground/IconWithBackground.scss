@@ -1,0 +1,17 @@
+@import 'styles/colors.scss';
+
+.IconWithBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  @each $name, $color in $colors {
+    &.background-color-#{$name}  {
+      background-color: $color !important;
+    }
+  }
+}
+.IconWithBackground_disabled {
+  background-color: $neutral-100 !important;
+  cursor: default;
+}

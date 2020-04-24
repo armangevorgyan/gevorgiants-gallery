@@ -1,0 +1,47 @@
+@import 'styles/index.scss';
+
+$headings: (
+  h1: 48px,
+  h2: 30px,
+  h3: 24px,
+  h4: 20px,
+  h5: 18px,
+  h6: 16px,
+);
+
+.Heading {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $font-weight-semibold;
+
+  &.inline {
+    display: inline;
+  }
+
+  //region Sizings
+  @each $sizeName, $sizeValue in $headings {
+    &.size-#{$sizeName} {
+      font-size: $sizeValue;
+      line-height: $sizeValue * 1.5;
+    }
+  }
+  //endregion
+
+  &.align-center {
+    text-align: center;
+  }
+  &.align-left {
+    text-align: left;
+  }
+  &.align-right {
+    text-align: right;
+  }
+
+  //region Colors
+  @each $name, $color in $colors {
+    &.color-#{$name} {
+      color: $color;
+    }
+  }
+  //endregion
+}

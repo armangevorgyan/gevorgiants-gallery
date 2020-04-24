@@ -1,0 +1,171 @@
+$neutral-white: #FFFFFF;
+$neutral-75: #F1F1F1;
+$neutral-100: #E5E5E5;
+$neutral-200: #CCCCCC;
+$neutral-500: #999999;
+$neutral-800: #333333;
+$neutral-900: #1D1D1D;
+$neutral-1000: #000000;
+
+$red-50: #FFEEEE;
+$red-75: #FFCCCC;
+$red-100: #FF8585;
+$red-300: #FF5252;
+$red-400: #CC4141;
+$red-500: #8F2D2D;
+
+$green-50: #DFFBF3;
+$green-75: #7FF0D0;
+$green-100: #00E1A1;
+$green-300: #00A677;
+$green-400: #006649;
+$green-500: #003928;
+
+$yellow-50: #FFF2D7;
+$yellow-75: #FFDD99;
+$yellow-100: #FFC34D;
+$yellow-300: #F8A90C;
+$yellow-400: #CA8700;
+$yellow-500: #9B6800;
+
+$orange-50: #FFF7F5;
+$orange-75: #FFD9CF;
+$orange-100: #FF9A7E;
+$orange-300: #F25023;
+$orange-400: #CC2C00;
+$orange-500: #891E00;
+
+$neutral-1000-opacity-15: rgba(0, 0, 0, 0.15);
+$neutral-1000-opacity-50: rgba(0, 0, 0, .5);
+$neutral-1000-opacity-30: rgba(0, 0, 0, 0.3);
+
+//Primary Palette
+$gallery-blue: #4B61F9;
+$gallery-black: #1A1A1A;
+$pure-white: #FFFFFF;
+$gallery-gray: #DBDBDB;
+$gallery-mint: #7FE2AF;
+
+//Secondary Palette
+$gallery-coral: #E15D35;
+$gallery-coral-light: #EA8E72;
+$gallery-coral-dark: #9D4125;
+$gallery-orange: #F4854A;
+$gallery-yellow: #F5CA41;
+$gallery-sky-blue: #4FC2F0;
+
+//Platform Colors
+$primary: $gallery-black;
+$info: $gallery-sky-blue;
+$success: $gallery-mint;
+$warning: $gallery-yellow;
+$error: $gallery-coral;
+
+//Body Text
+$secondary: $neutral-500;
+
+//-----------------------------------------------
+
+$colors: (
+primary: $primary,
+info: $gallery-sky-blue,
+success: $gallery-mint,
+warning: $gallery-yellow,
+error: $gallery-coral,
+error-dark: $gallery-coral-dark,
+
+secondary: $secondary,
+
+neutral-white: $neutral-white,
+neutral-75: $neutral-75,
+neutral-100: $neutral-100,
+neutral-200: $neutral-200,
+neutral-500: $neutral-500,
+neutral-800: $neutral-800,
+neutral-900: $neutral-900,
+neutral-1000: $neutral-1000,
+
+red-50: $red-50,
+red-75: $red-75,
+red-100: $red-100,
+red-300: $red-300,
+red-400: $red-400,
+red-500: $red-500,
+
+green-50: $green-50,
+green-75: $green-75,
+green-100: $green-100,
+green-300: $green-300,
+green-400: $green-400,
+green-500: $green-500,
+
+yellow-50: $yellow-50,
+yellow-75: $yellow-75,
+yellow-100: $yellow-100,
+yellow-300: $yellow-300,
+yellow-400: $yellow-400,
+yellow-500: $yellow-500,
+
+orange-50: $orange-50,
+orange-75: $orange-75,
+orange-100: $orange-100,
+orange-300: $orange-300,
+orange-400: $orange-400,
+orange-500: $orange-500,
+
+neutral-1000-opacity-15: $neutral-1000-opacity-15,
+neutral-1000-opacity-50: $neutral-1000-opacity-50,
+neutral-1000-opacity-30: $neutral-1000-opacity-30,
+);
+
+:export {
+  primary: $primary;
+  info: $gallery-sky-blue;
+  success: $gallery-mint;
+  warning: $gallery-yellow;
+  error: $gallery-coral;
+  error-dark: $gallery-coral-dark;
+
+  secondary: $secondary;
+
+  neutral-white: $neutral-white;
+  neutral-75: $neutral-75;
+  neutral-100: $neutral-100;
+  neutral-200: $neutral-200;
+  neutral-500: $neutral-500;
+  neutral-800: $neutral-800;
+  neutral-900: $neutral-900;
+  neutral-1000: $neutral-1000;
+
+  red-50: $red-50;
+  red-75: $red-75;
+  red-100: $red-100;
+  red-300: $red-300;
+  red-400: $red-400;
+  red-500: $red-500;
+
+  green-50: $green-50;
+  green-75: $green-75;
+  green-100: $green-100;
+  green-300: $green-300;
+  green-400: $green-400;
+  green-500: $green-500;
+
+  yellow-50: $yellow-50;
+  yellow-75: $yellow-75;
+  yellow-100: $yellow-100;
+  yellow-300: $yellow-300;
+  yellow-400: $yellow-400;
+  yellow-500: $yellow-500;
+
+  orange-50: $orange-50;
+  orange-75: $orange-75;
+  orange-100: $orange-100;
+  orange-300: $orange-300;
+  orange-400: $orange-400;
+  orange-500: $orange-500;
+
+  neutral-1000-opacity-15: $neutral-1000-opacity-15;
+  neutral-1000-opacity-50: $neutral-1000-opacity-50;
+  neutral-1000-opacity-30: $neutral-1000-opacity-30;
+}

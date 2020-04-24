@@ -1,0 +1,31 @@
+@import 'styles/index.scss';
+
+.PublicPageLayout-Fluid{
+  background-attachment: fixed;
+  background-size: auto 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  @media (max-width: #{map-get($breakpoints, md) - 1px}) {
+    background: none !important;
+  }
+}
+
+.PublicPageLayout {
+  .Form-Wrapper{
+    @media (min-width: #{map-get($breakpoints, md)}) {
+      min-height: 100vh;
+    }
+  }
+
+  .Block-Wrapper{
+    //background-color: $neutral-white;
+    padding-left: 0;
+    padding-right: 0;
+    @media (max-width: #{map-get($breakpoints, sm)}) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

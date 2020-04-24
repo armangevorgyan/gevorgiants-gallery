@@ -1,0 +1,47 @@
+@import 'styles/colors.scss';
+@import 'styles/mixins.scss';
+
+.Image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+  .withError {
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primary;
+    }
+  }
+
+  &.aspectRatio {
+    height: 0;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &.withError{
+    background-color: $neutral-100;
+    background-image: url(asset('images/no-image.svg'));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30% 30%;
+  }
+}

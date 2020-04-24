@@ -1,0 +1,21 @@
+@import 'styles/colors.scss';
+@import 'styles/fonts.scss';
+@import 'styles/mixins.scss';
+
+.Link {
+  text-decoration: none;
+  font-weight: $font-weight-regular;
+  font-family: inherit;
+
+  &.fluid{
+    @include fluid();
+  }
+
+  //region Colors
+  @each $name, $color in $colors {
+    &.color-#{$name} {
+      color: $color;
+    }
+  }
+  //endregion Colors
+}

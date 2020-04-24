@@ -1,0 +1,27 @@
+@import 'styles/colors.scss';
+
+$sizes: (
+  20px, 30px, 40px, 50px, 80px, 100px
+);
+
+.Spinner {
+
+  &.ball-scale-multiple {
+    transform: none;
+  }
+  &.ball-scale-multiple > div {
+    left: 0;
+  }
+
+  @each $size in $sizes {
+    &.size-#{$size}{
+      width: $size;
+      height: $size;
+
+      &.ball-scale-multiple > div {
+        width: $size;
+        height: $size;
+      }
+    }
+  }
+}

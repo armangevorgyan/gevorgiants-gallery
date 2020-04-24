@@ -1,0 +1,73 @@
+@import 'styles/index.scss';
+
+.Select{
+  .Select__control{
+    border: 1px solid $neutral-200;
+    border-radius: 4px;
+    background-color: $neutral-white;
+    font-size: 16px;
+    color: $neutral-900;
+    font-weight: $font-weight-semibold;
+    height: 50px;
+    &:hover{
+      border-color: $primary;
+    }
+  }
+  .Select__control--is-focused{
+    box-shadow: none;
+    border: 1px solid $primary;
+    &:hover{
+      border-color: $primary;
+    }
+  }
+  .Select__indicator-separator{
+    background-color: transparent;
+  }
+
+  .Select__value-container{
+    padding: 0 13px;
+  }
+
+  .Select__option{
+    background-color: $neutral-white;
+    color: $neutral-900;
+    cursor: pointer;
+    padding: 15px;
+    font-weight: $font-weight-semibold;
+    &:hover, &:active{
+      background-color: $neutral-100;
+    }
+  }
+  .Select__option--is-selected{
+    color: $primary;
+  }
+  .Select__option--is-focused{
+    background-color: $neutral-white;
+    &:hover{
+      color: $neutral-900;
+    }
+  }
+  .Select__option--is-disabled{
+    cursor: default;
+    color: $neutral-200;
+    &:active, &:hover{
+      background-color: $neutral-white;
+    }
+  }
+
+  &:focus{
+    outline: none;
+    border: 1px solid $neutral-900;
+  }
+
+  &.error .Select__control{
+    border-color: $red-300;
+  }
+  &.warning .Select__control{
+    border-color: $orange-300;
+  }
+
+  &.fluid{
+    @include fluid();
+  }
+}

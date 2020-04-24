@@ -1,0 +1,27 @@
+@import 'styles/colors.scss';
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+
+.Alert {
+  background-color: $neutral-100;
+  font-weight: $font-weight-semibold;
+  border-radius: 0;
+
+  &.fluid {
+    @include fluid();
+  }
+
+  &.type-success {
+    color: $success;
+  }
+  &.type-error {
+    background-color: $error;
+    color: $neutral-white;
+  }
+  &.type-warning {
+    color: $warning;
+  }
+  &.type-info {
+    color: $neutral-500;
+  }
+}

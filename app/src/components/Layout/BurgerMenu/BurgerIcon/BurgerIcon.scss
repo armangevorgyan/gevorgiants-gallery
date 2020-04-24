@@ -1,0 +1,38 @@
+@import 'styles/colors.scss';
+
+$bar-width: 20px;
+$bar-height: 2px;
+
+.burger-icon,
+.burger-icon.open {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  right: 8px;
+  top: 10px;
+  z-index: 9999;
+  padding: 0;
+  border-radius: 25px;
+}
+
+.burger-icon .bar1,
+.bar2,
+.bar3 {
+  width: $bar-width;
+  height: $bar-height;
+  background-color: $primary;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.burger-icon.open .bar1 {
+  transform: rotate(-45deg) translate(-3.5px, 3.5px);
+}
+
+.burger-icon.open .bar2 {
+  opacity: 0;
+}
+
+.burger-icon.open .bar3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}

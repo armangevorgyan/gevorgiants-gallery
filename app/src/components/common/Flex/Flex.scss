@@ -1,0 +1,81 @@
+@import "styles/sizing.scss";
+@import 'styles/colors.scss';
+
+.Flex {
+  display: flex;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    max-width: 100%;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+
+  &.align-end {
+    align-items: flex-end;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+
+  &.justify-start {
+    justify-content: flex-start;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.justify-end {
+    justify-content: flex-end;
+  }
+
+  &.justify-space-between {
+    justify-content: space-between;
+  }
+
+  &.justify-space-around {
+    justify-content: space-around;
+  }
+
+  &.justify-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &.container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.cursor {
+    cursor: pointer;
+  }
+
+  @each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+      &.container {
+        width: map-get($containerSizes, $breakpoint);
+
+        padding-left: map-get($gridAdditionalGaps, $breakpoint);
+        padding-right: map-get($gridAdditionalGaps, $breakpoint);
+      }
+
+      &.wrapped {
+        //margin-left: -#{map-get($gridGaps, $breakpoint)};
+        //margin-right: -#{map-get($gridGaps, $breakpoint)};
+
+        & > .Flex[class*=col-] {
+          //padding-left: map-get($gridGaps, $breakpoint);
+          //padding-right: map-get($gridGaps, $breakpoint);
+        }
+      }
+
+      @each $column in $columns {
+        &.col-#{$breakpoint}-#{$column} {
+          width: percentage($column/12);
+        }
+      }
+    }
+  }
+}

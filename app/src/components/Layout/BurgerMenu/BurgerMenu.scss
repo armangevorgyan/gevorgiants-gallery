@@ -1,0 +1,82 @@
+@import 'styles/colors.scss';
+@import 'styles/mixins.scss';
+
+.BurgerMenu {
+  .BurgerMenu-Layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    background-color: rgba(0,0,0,0.8);
+
+    transition: all 0.3s ease;
+
+    &.shown {
+      visibility: visible;
+      opacity: 1;
+
+      .BurgerMenu-Bar {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  .BurgerMenu-LeftBar {
+    display: flex;
+    flex: 1;
+    height: 100%;
+  }
+
+  .BurgerMenu-Bar {
+    width: 311px;
+    height: 100%;
+    transition: transform 0.3s ease;
+
+    transform: translate3d(320px, 0, 0);
+
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    padding-top: 40px;
+
+    background-color: $neutral-white;
+  }
+
+  .BurgerMenu-Logo {
+    width: 163px;
+    //margin-bottom: 45px;
+    padding-left: 40px;
+  }
+
+  .BurgerMenu-MenuList {
+    padding-left: 40px;
+    flex: 1;
+
+    .BurgerMenu-MenuLink {
+      margin-bottom: 20px;
+
+      a {
+        color: $primary;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .BurgerMenu-Footer {
+    width: 100%;
+    background-image: url(assetGallery('sculpture/thumbnails/013.jpg'));
+    background-size: 150px;
+    background-position: 40px 30px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex: 0 0 235px;
+    flex-direction: column-reverse;
+    padding-bottom: 12px;
+  }
+}

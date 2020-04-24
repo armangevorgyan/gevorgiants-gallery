@@ -1,0 +1,69 @@
+@function asset($file) {
+  @return '/assets/'+ $file;
+}
+@function assetGallery($file) {
+  @return '/assets/gallery/'+ $file;
+}
+
+@function strReplace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + strReplace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin fluid() {
+  width: 100%;
+}
+
+
+@mixin createSpacesClasses($spaces, $spacing-variants) {
+  @each $size, $value in $spaces {
+    @each $variant, $property in $spacing-variants {
+      .#{$variant}-#{$size} {
+        #{$property}: $value !important;
+      }
+    }
+  }
+}
+
+@mixin fontFace($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + strReplace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin writeBreakpointsInBody() {
+  @each $brerakpointName, $brerakpointSize in $breakpoints {
+    @media (min-width: $brerakpointSize) {
+      body:before {
+        display: none;
+        content: '#{$brerakpointName}';
+      }
+    }
+  }
+}

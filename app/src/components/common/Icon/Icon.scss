@@ -1,0 +1,39 @@
+@import 'styles/colors.scss';
+
+.Icon {
+  //region Colors
+  @each $name, $color in $colors {
+    &.color-#{$name} path {
+      fill: $color;
+    }
+  }
+
+  &.color-currentColor path {
+    fill: currentColor;
+  }
+  //endregion
+
+  &.delete:hover {
+    path {
+      fill: $error;
+    }
+  }
+}
+
+.primary-btn-icon {
+  svg {
+    fill: $neutral-white;
+  }
+
+  &:hover {
+    svg {
+      fill: $primary;
+    }
+  }
+
+  &:disabled {
+    svg {
+      fill: $neutral-200;
+    }
+  }
+}

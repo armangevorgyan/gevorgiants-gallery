@@ -1,0 +1,35 @@
+{
+  "INPUT_LABELS": {
+  },
+  "PLACEHOLDER": {
+  },
+  "BUTTON_LABELS": {
+    "HOME": "Home"
+  },
+  "ERRORS": {
+    "SOMETHING_WENT_WRONG": "Something went wrong",
+    "CANT_FIND_PAGE": "Oh snap! We can’t find your page"
+  },
+  "PAGE_TITLE": {
+    "HOME": "Home",
+    "SCULPTURES": "Sculptures",
+    "PAINTINGS": "Paintings",
+    "EXTERIORS_INTERIORS": "Exteriors/Interiors",
+    "PUBLICATIONS": "Publications",
+    "ABOUT": "About"
+  },
+  "MENU": {
+    "HOME": "Home",
+    "SCULPTURES": "Sculptures",
+    "PAINTINGS": "Paintings",
+    "EXTERIORS_INTERIORS": "Exteriors/Interiors",
+    "PUBLICATIONS": "Publications",
+    "ABOUT": "About",
+    "COPYRIGHT": "Copyright © armangev@gmail.com {{year}}",
+    "GEVORGIANTS_GALLERY": "Gevorgiants Gallery"
+  },
+  "VIEWS": "Views",
+  "CONTACT_US": "Contact us",
+  "THANK_YOU": "Thank you",
+  "PAGE_MAIN_TITLE": "Gevorgiants Gallery "
+}

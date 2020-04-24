@@ -1,0 +1,30 @@
+@import 'styles/colors.scss';
+@import 'styles/sizing.scss';
+
+.Footer {
+  background-color: transparent;
+
+  .FooterBottom {
+    @media (max-width: map-get($breakpoints, md) - 1px) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  .FooterBottomInner {
+    flex-wrap: wrap;
+    @media (min-width: map-get($breakpoints, md)) {
+      justify-content: space-between;
+    }
+
+    .FooterBottomInner-right {
+      justify-content: space-between;
+    }
+
+    .FooterBottomInner-left,
+    .FooterBottomInner-right {
+      @media (max-width: map-get($breakpoints, md)-1px) {
+        width: 100%;
+      }
+    }
+  }
+}

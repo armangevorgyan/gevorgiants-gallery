@@ -1,0 +1,11 @@
+@import 'styles/colors.scss';
+
+.MessageList{
+  position: fixed;
+  top: 5%;
+  //left: 0;
+  right: 16px;
+  z-index: 15;
+  //margin-right: auto;
+  //margin-left: auto;
+}

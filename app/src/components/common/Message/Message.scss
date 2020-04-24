@@ -1,0 +1,41 @@
+@import 'styles/colors.scss';
+@import 'styles/fonts.scss';
+
+$messages: (
+  error: (
+    borderColor: $gallery-coral
+  ),
+  info: (
+    borderColor: $gallery-yellow
+  ),
+  success: (
+    borderColor: $gallery-mint
+  )
+);
+
+.Message {
+  background-color: $neutral-white;
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: solid 1px $neutral-75;
+  @each $type, $message in $messages {
+    &.#{$type}{
+      border-left: 4px map-get($message, 'borderColor') solid;
+    }
+  }
+
+  .Message-inner {
+    flex: 1 1 auto;
+    user-select: none;
+  }
+
+  .title {
+
+  }
+
+  .close-button-wrapper {
+    cursor: pointer;
+    padding-right: 4px;
+    padding-bottom: 16px;
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/no-unused-state": 1,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "no-empty-pattern": 1,
+    "react/jsx-indent": [
+      2,
+      2
+    ],
+    "quotes": [
+      1,
+      "single"
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "args": "none",
+        "caughtErrors": "none"
+      }
+    ],
+    "no-nested-ternary": 0,
+    "no-unneeded-ternary": 1,
+    "react/prefer-stateless-function": 0,
+    "no-param-reassign": 0,
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": [
+          "class",
+          "for"
+        ]
+      }
+    ],
+    "arrow-body-style": [
+      0,
+      "as-needed"
+    ],
+    "no-plusplus": 0,
+    "no-restricted-syntax": 1,
+    "no-use-before-define": [
+      2,
+      {
+        "functions": false,
+        "classes": false
+      }
+    ],
+    "linebreak-style": "off",
+    "import/no-unresolved": [
+      0,
+      {
+        "commonjs": false,
+        "amd": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

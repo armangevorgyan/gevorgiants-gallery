@@ -1,0 +1,9 @@
+@import 'styles/colors.scss';
+
+.BackgroundImage {
+  @each $name, $color in $colors {
+    &.color-#{$name}  {
+      background-color: $color;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# testing
+/coverage
+
+# production
+/build
+
+.idea
+
+npm-debug.log*
+
+/node_modules/

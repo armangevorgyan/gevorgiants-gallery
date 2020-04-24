@@ -1,0 +1,51 @@
+.SpinnerWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex: 1 auto;
+
+  &.noLayout {
+    width: initial;
+    flex: initial;
+  }
+
+  .SpinnerWrapper-overlay {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+
+    & > div {
+      opacity: 0;
+
+      transition: all 0.3s ease;
+    }
+  }
+
+  &.spinning {
+    .SpinnerWrapper-overlay {
+      visibility: visible;
+      background-color: rgba(255,255,255, 0.5);
+
+      .SpinnerWrapper-Inner{
+        top: 10%;
+        bottom: 10%;
+        position: sticky;
+      }
+
+      & > div {
+        opacity: 1;
+      }
+    }
+  }
+}

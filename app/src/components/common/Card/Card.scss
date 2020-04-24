@@ -1,0 +1,37 @@
+@import "styles/colors.scss";
+
+.Card {
+  ////border-left: 1px $primary solid;
+  ////border-bottom: 1px $primary solid;
+  ////border-top: 1px $primary solid;
+  //&:last-child{
+  //  border-right: 1px $primary solid;
+  //}
+
+  padding: 12px;
+  &-header {
+    margin-bottom: 14px;
+  }
+
+  &-footer {
+    margin-top: 14px;
+  }
+}
+
+.Card_selected {
+  background-color: $primary;
+  background: linear-gradient(135deg, $primary, $gallery-mint);
+  box-shadow: 0 0 16px 0 rgba($neutral-1000, 0.2);
+  color: $neutral-white !important;
+
+  .Icon.color-green-100 {
+    path {
+      fill: $neutral-white;
+    }
+  }
+}
+
+.Card_disabled {
+  background-color: $neutral-75;
+  color: $neutral-500;
+}

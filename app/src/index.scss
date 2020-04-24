@@ -1,0 +1,78 @@
+@import "styles/index.scss";
+@import 'styles/buttons.scss';
+
+@include createFontFace();
+@include createSpacesClasses($spaces, $spacing-variants);
+@include writeBreakpointsInBody();
+
+* {
+  box-sizing: border-box;
+  font-family: $font-primary;
+}
+
+body {
+  font-size: 14px;
+  margin: 0;
+  background-color: $neutral-white;
+}
+
+.fluid {
+  @include fluid();
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.break-pre-line {
+  white-space: pre-line;
+}
+
+.black-line {
+  border-bottom: 2px $primary solid;
+  margin: 2px 0;
+  width: 100%;
+}
+
+//carousel
+.carousel-root {
+  width: 100%;
+}
+
+.control-arrow:before {
+  border-top: 30px solid transparent !important;
+  border-bottom: 30px solid transparent !important;
+}
+
+.control-next.control-arrow:before {
+  border-left: 30px solid #fff !important;
+}
+
+.control-prev.control-arrow:before {
+  border-right: 30px solid #fff !important;
+}
+
+.legend {
+  background-color: transparent !important;
+  opacity: 0.8 !important;
+  margin-left: -44% !important;
+  bottom: 55px !important;
+}
+
+//
+.lightbox-container {
+  flex-wrap: wrap;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-img-thumbnail {
+  flex-direction: column;
+  text-align: center;
+  width: 250px !important;
+  height: auto !important;
+}

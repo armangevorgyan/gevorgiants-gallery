@@ -1,0 +1,15 @@
+@import 'styles/colors.scss';
+
+.FixedMessage {
+  width: 100%;
+
+  .FixedMessageItem{
+    width: 100%;
+    padding: 12px 16px;
+    background-color: $yellow-50;
+
+    .underlined-link{
+      text-decoration: underline;
+    }
+  }
+}

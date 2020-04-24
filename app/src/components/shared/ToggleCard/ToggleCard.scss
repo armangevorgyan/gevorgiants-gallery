@@ -1,0 +1,14 @@
+@import "styles/colors.scss";
+
+.ToggleCard {
+  background-color: $neutral-white;
+  border-radius: 10px;
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.1);
+  padding: 24px;
+    .header{
+      cursor: pointer;
+    }
+  .d-none {
+    display: none;
+  }
+}
