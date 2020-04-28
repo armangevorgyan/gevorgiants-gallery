@@ -9,7 +9,8 @@ import translate from 'helpers/translate';
 import Flex             from 'components/common/Flex/Flex';
 import PageCenterLoader from 'components/shared/PageCenterLoader/PageCenterLoader';
 import PageTitle        from 'components/shared/PageTitle/PageTitle';
-import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
+import Lightbox         from 'components/common/LightBox/Lightbox';
+// import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
 
 import './PaintingContainer.scss';
 
@@ -62,7 +63,9 @@ class PaintingContainer extends Component {
         align={'center'}
         column
       >
-        <ImagesGrid imagesList={paintingsList} />
+        <Lightbox images={paintingsList}/>
+
+        {/*<ImagesGrid imagesList={paintingsList} />*/}
       </Flex>
     </Fragment>;
   }

@@ -9,7 +9,8 @@ import translate from 'helpers/translate';
 import PageCenterLoader from 'components/shared/PageCenterLoader/PageCenterLoader';
 import Flex             from 'components/common/Flex/Flex';
 import PageTitle        from 'components/shared/PageTitle/PageTitle';
-import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
+import Lightbox         from 'components/common/LightBox/Lightbox';
+// import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
 
 import './ExteriorInteriorContainer.scss';
 
@@ -61,7 +62,8 @@ class ExteriorInteriorContainer extends Component {
         align={'center'}
         column
       >
-        <ImagesGrid imagesList={exteriorInteriorList} />
+        <Lightbox images={exteriorInteriorList} />
+        {/*<ImagesGrid imagesList={exteriorInteriorList} />*/}
       </Flex>
     </Fragment>;
   }

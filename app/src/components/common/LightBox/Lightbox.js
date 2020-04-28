@@ -1,7 +1,9 @@
-import React      from 'react';
-import PropTypes  from 'prop-types';
+import React     from 'react';
+import PropTypes from 'prop-types';
+
 import Container  from './Container';
 import BodyPortal from './BodyPortal';
+
 import './Lightbox.css';
 
 
@@ -62,14 +64,22 @@ Lightbox.defaultProps = {
   thumbnailHeight: '80px',
   renderImageFunc: (idx, image, toggleLightbox, width, height) => {
     return (
-      <img
-        key={idx}
-        src={!!image.thumbnail ? image.thumbnail : image.src}
-        className='lightbox-img-thumbnail'
-        style={{width: width, height: height}}
-        alt={image.title}
-        onClick={toggleLightbox.bind(null, idx)}
-      />
+      <div className={'lightbox-image-wrapper'} key={idx}>
+        <img
+          src={!!image.thumbnail ? image.thumbnail : image.src}
+          className='lightbox-img-thumbnail'
+          style={{width: width, height: height}}
+          alt={image.title}
+          onClick={toggleLightbox.bind(null, idx)}
+        />
+        <p
+          style={{
+            fontSize: 16,
+            textAlign: 'left',
+            margin: '0 10px'
+          }}
+        >{image.title}</p>
+      </div>
     );
   }
 };

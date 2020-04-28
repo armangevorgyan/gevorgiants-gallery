@@ -7,7 +7,7 @@ export const CategoriesPreview = [
     categoryName: 'Sculptures',
     categoryPath: '/sculptures',
     title: '03',
-    description: 'description',
+    description: '',
     imageSrc: assetGallery('sculpture/thumbnails/01.jpg')
   },
   {
@@ -15,7 +15,7 @@ export const CategoriesPreview = [
     categoryName: 'Paintings',
     categoryPath: '/paintings',
     title: '02',
-    description: 'description',
+    description: '',
     imageSrc: assetGallery('painting/thumbnails/01.jpg')
   },
   {
@@ -23,7 +23,7 @@ export const CategoriesPreview = [
     categoryName: 'Exteriors/Interiors',
     categoryPath: '/exteriors-interiors',
     title: '01',
-    description: 'description',
+    description: '',
     imageSrc: assetGallery('exterior-interior/thumbnails/01.jpg')
   },
   {
@@ -31,7 +31,7 @@ export const CategoriesPreview = [
     categoryName: 'Publications',
     categoryPath: '/publications',
     title: '04',
-    description: 'description',
+    description: '',
     imageSrc: assetGallery('exterior-interior/thumbnails/02.jpg')
   },
 ];

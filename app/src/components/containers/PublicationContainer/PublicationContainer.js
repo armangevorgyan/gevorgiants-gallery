@@ -9,11 +9,11 @@ import translate from 'helpers/translate';
 import PageCenterLoader from 'components/shared/PageCenterLoader/PageCenterLoader';
 import Flex             from 'components/common/Flex/Flex';
 import PageTitle        from 'components/shared/PageTitle/PageTitle';
+import Lightbox         from 'components/common/LightBox/Lightbox';
 // import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
 
 import './PublicationContainer.scss';
-import Lightbox from 'components/common/LightBox/Lightbox';
-// import Lightbox         from 'react-lightbox-component';
+
 
 @connect(
   state => ({

@@ -119,7 +119,6 @@ export default class Container extends React.Component {
     let descriptionText = state.imagesDescriptions[state.selectedImageIndex];
     let description = props.renderDescriptionFunc.call(this, descriptionText);
     const transitionName = 'lightbox-transition-image';
-
     if (this.canMoveToLeft())
       leftButton = (
         <div className='lightbox-btn-left'>
@@ -178,7 +177,7 @@ Container.defaultProps = {
   renderDescriptionFunc: (descriptionText) => {
     return (
       <div>
-        {String(descriptionText)}
+        {descriptionText ? String(descriptionText) : ''}
       </div>
     );
   }

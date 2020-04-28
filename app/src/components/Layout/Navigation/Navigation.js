@@ -58,7 +58,7 @@ const Navigation = ({location}) => <Flex
   <Flex
     hidden={{
       md: 'down'
-    }} width={70}
+    }} width={218.5}
   />
 </Flex>;
 

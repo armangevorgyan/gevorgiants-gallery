@@ -21,7 +21,7 @@ const ImagesGrid = ({imagesList}) => <Flex
       key={index}
       footer={
         <Flex column>
-          <Text ellipsis>{image.title}</Text>
+          <Text>{image.title}</Text>
         </Flex>
       }
     >
