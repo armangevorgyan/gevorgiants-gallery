@@ -12,6 +12,7 @@ import Text            from 'components/common/Text/Text';
 import Translate       from 'components/common/Translate/Translate';
 
 import './Navigation.scss';
+import Link            from 'components/common/Link/Link';
 
 
 const Navigation = ({location}) => <Flex
@@ -48,10 +49,9 @@ const Navigation = ({location}) => <Flex
       key={index}
       column
       className={'navigation-menu-item'}
-      onClick={() => pushRoute(menuItem.url)}
-
+      // onClick={() => pushRoute(menuItem.url)}
     >
-      <span>{menuItem.title}</span>
+      <Link to={menuItem.url}>{menuItem.title}</Link>
       {location.pathname.startsWith(menuItem.url) && <Flex className={'black-line'} />}
     </Flex>)}
   </Flex>

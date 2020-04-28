@@ -5,6 +5,10 @@ import withHidableContainer from './withHidableContainer';
 import './Flex.scss';
 
 class Flex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.flexRef = React.createRef();
+  }
   render() {
     const {
       // Alignment
@@ -126,6 +130,7 @@ class Flex extends React.Component {
         onMouseUp={onMouseUp}
         onMouseLeave={onMouseLeave}
         onFocus={onFocus}
+        ref={this.flexRef}
       >
         {children || null}
       </div>

@@ -1,5 +1,5 @@
-import React, {Component, Fragment} from 'react';
-import {connect}                    from 'react-redux';
+import React, {Component, Fragment,} from 'react';
+import {connect}                     from 'react-redux';
 
 import {Carousel}              from 'react-responsive-carousel';
 import {withResizeObserverHOC} from 'hooks/useResizeObserver';
@@ -16,6 +16,7 @@ import BackgroundImage                      from 'components/common/Image/Backgr
 import PageTitle                            from 'components/shared/PageTitle/PageTitle';
 import Card, {CardBackgroundImageComponent} from 'components/common/Card/Card';
 import ArrowDown                            from 'components/common/ArrowDown/ArrowDown';
+import Translate                            from 'components/common/Translate/Translate';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './HomeContainer.scss';
@@ -51,6 +52,11 @@ class HomeContainer extends Component {
     this.props.resetHomeStore();
   }
 
+  scrollToRef = () => {
+    const categoryNameNode = document.getElementsByClassName('category-name')[0];
+    categoryNameNode.scrollIntoView({behavior: 'smooth'});
+  };
+
   render() {
     const {
       breakpoint,
@@ -73,7 +79,7 @@ class HomeContainer extends Component {
           align={'center'}
           justify={'center'}
         >
-          <Carousel
+          {banners?.bannersList ? <Carousel
             showThumbs={false}
             autoPlay
             interval={2000}
@@ -86,12 +92,15 @@ class HomeContainer extends Component {
                 height={['xs', 'sm'].includes(breakpoint) ? window.innerHeight - 50 : window.innerHeight - 70}
               >
                 <BackgroundImage source={item.src} width={'100%'} />
-                <Flex className={'legend'} justify={'center'}>
+                <Flex className={'legend'} justify={'center'} onClick={() => this.scrollToRef()}>
                   <ArrowDown />
                 </Flex>
               </Flex>
             ))}
-          </Carousel>
+          </Carousel> : null}
+        </Flex>
+        <Flex justify={'center'} align={'center'} spaces={['mt-15', 'mb-8']}>
+          <Text size={'scale-4'} weight={'semibold'}><Translate>PAGE_MAIN_TITLE</Translate></Text>
         </Flex>
         <Flex
           spaces={['mt-6']}
@@ -102,7 +111,6 @@ class HomeContainer extends Component {
           wrap
         >
           {categories?.categoriesList?.map((category, index) => {
-              console.log(breakpoint);
               return <Flex
                 xs={12}
                 md={6}
@@ -112,16 +120,21 @@ class HomeContainer extends Component {
               >
                 <Card
                   cardWidth={'100%'}
-                  header={
-                    <Flex column justify={'center'} align={'center'}>
-                      <Text ellipsis>{category.categoryName}</Text>
+                  footer={
+                    <Flex
+                      column
+                      justify={'center'}
+                      align={'center'}
+                      className={'category-name'}
+                      style={{maxWidth: 400, margin: '0 auto'}}
+                    >
+                      <Text size={'scale-5'} align={'center'}>{category.categoryName}</Text>
                     </Flex>
                   }
                 >
                   <CardBackgroundImageComponent imageSrc={category.imageSrc} />
                 </Card>
               </Flex>;
-
             }
           )}
         </Flex>

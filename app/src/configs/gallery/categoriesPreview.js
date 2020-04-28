@@ -32,6 +32,6 @@ export const CategoriesPreview = [
     categoryPath: '/publications',
     title: '04',
     description: '',
-    imageSrc: assetGallery('exterior-interior/thumbnails/02.jpg')
+    imageSrc: assetGallery('publication/thumbnails/06.jpg')
   },
 ];

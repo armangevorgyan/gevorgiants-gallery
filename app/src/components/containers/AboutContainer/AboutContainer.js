@@ -9,12 +9,16 @@ import PageCenterLoader from 'components/shared/PageCenterLoader/PageCenterLoade
 import Flex             from 'components/common/Flex/Flex';
 import PageTitle        from 'components/shared/PageTitle/PageTitle';
 
+import Biography   from './Biography';
+import Exhibitions from './Exhibitions';
+import AuthorImage from './AuthorImage';
+import Contact     from './Contact';
+
 import './AboutContainer.scss';
 
 
 @connect(
-  state => ({
-  }),
+  state => ({}),
   dispatch => ({
     setPageTitle: (pageTitle) => dispatch(generalActions.setPageTitle(pageTitle))
   }),
@@ -26,7 +30,7 @@ class AboutContainer extends Component {
 
   componentDidMount() {
     const {setPageTitle} = this.props;
-    setPageTitle('Home');
+    setPageTitle('PAGE_TITLE.ABOUT');
 
   }
 
@@ -48,20 +52,30 @@ class AboutContainer extends Component {
       <Flex
         width={'100%'}
         className={'AboutContainer'}
+        spaces={['pl-4', 'pr-4']}
         column
       >
-        <Flex
-          width={'100%'}
-          spaces={['mt-4']}
-          align={'center'}
-          justify={'center'}
-        >
-          <Flex xs={12} row wrap>
-            <Flex xs={12} lg={4}>
 
-            </Flex>
-            <Flex xs={12} lg={8}></Flex>
-
+        <Flex xs={12} row wrap>
+          <Flex
+            column
+            xs={12}
+            md={6}
+            lg={8}
+          >
+            <Exhibitions />
+          </Flex>
+          <Flex
+            column
+            xs={12}
+            md={6}
+            lg={4}
+            align={'center'}
+            // justify={'center'}
+          >
+            <AuthorImage />
+            <Biography />
+            <Contact />
           </Flex>
         </Flex>
       </Flex>

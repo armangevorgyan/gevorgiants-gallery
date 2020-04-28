@@ -62,7 +62,7 @@ class PublicationContainer extends Component {
         align={'center'}
         column
       >
-        <Lightbox images={publicationsList} />
+        <Lightbox images={publicationsList} showTitle={false}/>
         {/*<ImagesGrid imagesList={publicationsList} />*/}
       </Flex>
     </Fragment>;

@@ -1,9 +1,18 @@
-import React from 'react';
+import React     from 'react';
 import PropTypes from 'prop-types';
-import NoImage from 'assets/images/no-image.svg';
+import NoImage   from 'assets/images/no-image.svg';
 import './BackgroundImage.scss';
 
-const BackgroundImage = ({ className, styles, source, width, height, backgroundColor }) => {
+
+const BackgroundImage = ({
+                           className,
+                           styles,
+                           source,
+                           width,
+                           height,
+                           borderRadius,
+                           backgroundColor
+                         }) => {
   const classNames = ['BackgroundImage'];
   if (className) {
     classNames.push(className);
@@ -14,10 +23,12 @@ const BackgroundImage = ({ className, styles, source, width, height, backgroundC
   return (
     <div
       className={classNames.join(' ')}
-      style={{ ...styles,
+      style={{
+        ...styles,
         backgroundImage: `url(${source || NoImage})`,
         height: height || '100vh',
-        width: width || 'auto'
+        width: width || 'auto',
+        borderRadius: borderRadius || 0
       }}
     />
   );
@@ -31,6 +42,7 @@ BackgroundImage.defaultProps = {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
     backgroundSize: 'cover',
+    borderRadius: 0
   },
   className: ''
 };

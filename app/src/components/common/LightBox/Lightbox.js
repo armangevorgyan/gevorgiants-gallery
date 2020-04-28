@@ -33,7 +33,8 @@ class Lightbox extends React.Component {
         image,
         this.toggleLightbox,
         props.thumbnailWidth,
-        props.thumbnailHeight
+        props.thumbnailHeight,
+        props.showTitle
       );
     });
     let container;
@@ -60,25 +61,22 @@ class Lightbox extends React.Component {
 
 Lightbox.defaultProps = {
   showImageModifiers: true,
-  thumbnailWidth: '80px',
-  thumbnailHeight: '80px',
-  renderImageFunc: (idx, image, toggleLightbox, width, height) => {
+  thumbnailWidth: '250px',
+  thumbnailHeight: 'auto',
+  showTitle: true,
+  renderImageFunc: (idx, image, toggleLightbox, width, height, showTitle) => {
     return (
       <div className={'lightbox-image-wrapper'} key={idx}>
         <img
-          src={!!image.thumbnail ? image.thumbnail : image.src}
+          src={!!image.thumbnailSrc ? image.thumbnailSrc : image.src}
           className='lightbox-img-thumbnail'
           style={{width: width, height: height}}
           alt={image.title}
           onClick={toggleLightbox.bind(null, idx)}
         />
-        <p
-          style={{
-            fontSize: 16,
-            textAlign: 'left',
-            margin: '0 10px'
-          }}
-        >{image.title}</p>
+        {showTitle ? <p
+          className={'lightbox-thumbnail-title'}
+        >{image.title}</p> : null}
       </div>
     );
   }
@@ -89,11 +87,12 @@ Lightbox.propTypes = {
     src: PropTypes.string.isRequired,
     title: PropTypes.string,
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    thumbnail: PropTypes.string
+    thumbnailSrc: PropTypes.string
   })).isRequired,
   showImageModifiers: PropTypes.bool,
   thumbnailWidth: PropTypes.string,
   thumbnailHeight: PropTypes.string,
+  showTitle: PropTypes.bool,
   renderImageFunc: PropTypes.func,
   renderDescriptionFunc: PropTypes.func
 };
