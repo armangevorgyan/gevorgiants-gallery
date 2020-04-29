@@ -13,6 +13,7 @@ import Lightbox         from 'components/common/LightBox/Lightbox';
 // import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
 
 import './PaintingContainer.scss';
+import FacebookMetaTags from 'components/shared/FacebookMetaTags/FacebookMetaTags';
 
 
 @connect(
@@ -56,6 +57,10 @@ class PaintingContainer extends Component {
 
     return <Fragment>
       <PageTitle title={translate('PAGE_TITLE.PAINTINGS')} />
+      <FacebookMetaTags
+        url={'http://www.gevorginats.com/paintings'}
+        title={translate('PAGE_TITLE.PAINTINGS')}
+      />
       <Flex
         width={'100%'}
         className={'PaintingContainer'}

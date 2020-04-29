@@ -9,12 +9,13 @@ import PageCenterLoader from 'components/shared/PageCenterLoader/PageCenterLoade
 import Flex             from 'components/common/Flex/Flex';
 import PageTitle        from 'components/shared/PageTitle/PageTitle';
 
-import Biography   from './Biography';
-import Exhibitions from './Exhibitions';
-import AuthorImage from './AuthorImage';
-import Contact     from './Contact';
+import Biography        from './Biography';
+import Exhibitions      from './Exhibitions';
+import AuthorImage      from './AuthorImage';
+import Contact          from './Contact';
 
 import './AboutContainer.scss';
+import FacebookMetaTags from 'components/shared/FacebookMetaTags/FacebookMetaTags';
 
 
 @connect(
@@ -49,6 +50,10 @@ class AboutContainer extends Component {
 
     return <Fragment>
       <PageTitle title={translate('PAGE_TITLE.ABOUT')} />
+      <FacebookMetaTags
+        url={'http://www.gevorginats.com/about'}
+        title={translate('PAGE_TITLE.ABOUT')}
+      />
       <Flex
         width={'100%'}
         className={'AboutContainer'}
@@ -72,13 +77,15 @@ class AboutContainer extends Component {
             xs={12}
             md={6}
             lg={4}
-            // spaces={['pl-2', 'pr-2']}
+            spaces={['pl-2', 'pr-2']}
             align={'center'}
             // justify={'center'}
           >
             <AuthorImage />
-            <Biography />
-            <Contact />
+            <Flex column spaces={['ml-5']}>
+              <Biography />
+              <Contact />
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

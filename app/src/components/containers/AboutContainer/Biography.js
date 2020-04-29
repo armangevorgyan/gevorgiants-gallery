@@ -35,7 +35,7 @@ const Biography = () => <Fragment>
       <Translate>ABOUT.EDUCATION</Translate>
     </Text>
   </Flex>
-  <Flex>
+  <Flex >
     <Text>
       <Translate>ABOUT.SPECIALIZATION</Translate>
     </Text>

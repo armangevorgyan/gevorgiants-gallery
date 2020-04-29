@@ -30,7 +30,6 @@ export default class ImageModifiers extends React.Component {
   }
 
   handleDownload() {
-    console.log(this.props.currentImage);
     window.open(this.props.currentImage);
   }
 

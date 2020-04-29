@@ -2,7 +2,7 @@ import React     from 'react';
 import PropTypes from 'prop-types';
 import Icon      from './Icon';
 
-import './Button.css';
+import 'components/common/LightBox/Button.scss';
 
 
 export default class Button extends React.Component {

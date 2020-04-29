@@ -1,12 +1,14 @@
-import React                                from 'react';
-import {CSSTransitionGroup}                 from 'react-transition-group';
-import PropTypes                            from 'prop-types';
+import React                from 'react';
+import {CSSTransitionGroup} from 'react-transition-group';
+import PropTypes            from 'prop-types';
+
 import ImageContent                         from './Image';
 import Button                               from './Button';
-import {addClass, removeClass, classToggle} from './utils/classNames';
+import {addClass, removeClass, classToggle} from './utilities/classNames';
 
-import './Container.css';
-
+import FacebookMetaTags from 'components/shared/FacebookMetaTags/FacebookMetaTags';
+import 'components/common/LightBox/Container.scss';
+// import {FacebookProvider, Share} from 'react-facebook';
 
 const transitionTime = 300;
 const transitionDelta = 50;
@@ -143,6 +145,18 @@ export default class Container extends React.Component {
           </div>
           <div className='lightbox-description'>
             {description}
+            <FacebookMetaTags
+              url={props.pageUrl}
+              imgUrl={window.location.origin + image.src}
+              title={image.title}
+            />
+            {/*<FacebookProvider appId="1124089411262429">*/}
+            {/*  <Share href="http://www.facebook.com">*/}
+            {/*    {({handleClick, loading}) => (*/}
+            {/*      <button type="button" disabled={loading} onClick={handleClick}><Icon size={34} icon={'facebook'}/></button>*/}
+            {/*    )}*/}
+            {/*  </Share>*/}
+            {/*</FacebookProvider>*/}
           </div>
         </div>
         <CSSTransitionGroup
@@ -189,5 +203,6 @@ Container.propTypes = {
   images: PropTypes.array.isRequired,
   toggleLightbox: PropTypes.func.isRequired,
   showImageModifiers: PropTypes.bool,
-  renderDescriptionFunc: PropTypes.func
+  renderDescriptionFunc: PropTypes.func,
+  pageUrl: PropTypes.string
 };

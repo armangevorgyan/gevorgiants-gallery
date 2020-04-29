@@ -1,3 +1,5 @@
+@import "styles/colors.scss";
+
 .lightbox-btn {
   touch-action: manipulation;
   cursor: pointer;
@@ -10,7 +12,7 @@
   outline: none;
   margin: 2px 2px;
   padding: 0 0;
-  -webkit-tap-highlight-color: #ffffff00;
+  -webkit-tap-highlight-color: rgba($neutral-white, 0);
 }
 
 .lightbox-btn:hover {
@@ -25,6 +27,6 @@
 .lightbox-btn--ripple:hover circle {
   transform: scale(3);
   transform-origin: 33% 33%;
-  fill: #64646480;
+  fill: rgba($neutral-500, 0.5);
   transition: transform 200ms ease;
 }

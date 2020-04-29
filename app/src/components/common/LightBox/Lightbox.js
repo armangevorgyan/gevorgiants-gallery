@@ -1,10 +1,11 @@
+/*Author https://github.com/jfcaiceo, Thanks :) */
 import React     from 'react';
 import PropTypes from 'prop-types';
 
 import Container  from './Container';
 import BodyPortal from './BodyPortal';
 
-import './Lightbox.css';
+import 'components/common/LightBox/Lightbox.scss';
 
 
 class Lightbox extends React.Component {
@@ -94,6 +95,7 @@ Lightbox.propTypes = {
   thumbnailHeight: PropTypes.string,
   showTitle: PropTypes.bool,
   renderImageFunc: PropTypes.func,
-  renderDescriptionFunc: PropTypes.func
+  renderDescriptionFunc: PropTypes.func,
+  pageUrl: PropTypes.string
 };
 export default Lightbox;

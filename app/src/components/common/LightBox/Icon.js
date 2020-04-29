@@ -1,6 +1,6 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
-import {icons}   from './utils/iconConstants';
+import {icons}   from './utilities/icons';
 
 
 const Icon = (props) => (

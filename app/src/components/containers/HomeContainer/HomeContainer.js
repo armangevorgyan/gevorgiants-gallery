@@ -20,6 +20,7 @@ import Translate                            from 'components/common/Translate/Tr
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './HomeContainer.scss';
+import FacebookMetaTags                     from 'components/shared/FacebookMetaTags/FacebookMetaTags';
 
 
 @connect(
@@ -69,6 +70,10 @@ class HomeContainer extends Component {
     }
     return <Fragment>
       <PageTitle title={translate('PAGE_TITLE.HOME')} />
+      <FacebookMetaTags
+        url={'http://www.gevorginats.com'}
+        title={translate('GALLERY')}
+      />
       <Flex
         width={'100%'}
         className={'HomeContainer'}

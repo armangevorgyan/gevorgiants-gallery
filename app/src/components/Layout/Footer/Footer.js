@@ -15,11 +15,11 @@ const Footer = ({breakpoint}) => {
   >
     <Flex
       width={'100%'}
-      spaces={['pt-3', 'pb-3']}
+      spaces={['pt-8', 'pb-3', 'pl-4']}
       className={'FooterBottom'}
       justify={'center'}
     >
-      <Text align={'center'} color={'primary'} size={'scale-7'}>
+      <Text align={'left'} color={'primary'} size={'scale-7'}>
         <Translate data={{year: new Date().getFullYear()}}>MENU.COPYRIGHT</Translate>
       </Text>
     </Flex>

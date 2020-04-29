@@ -13,6 +13,7 @@ import Lightbox         from 'components/common/LightBox/Lightbox';
 // import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
 
 import './SculptureContainer.scss';
+import FacebookMetaTags from 'components/shared/FacebookMetaTags/FacebookMetaTags';
 
 
 @connect(
@@ -55,6 +56,10 @@ class SculptureContainer extends Component {
 
     return <Fragment>
       <PageTitle title={translate('PAGE_TITLE.SCULPTURES')} />
+      <FacebookMetaTags
+        url={'http://www.gevorginats.com/sculptures'}
+        title={translate('PAGE_TITLE.SCULPTURES')}
+      />
       <Flex
         width={'100%'}
         className={'SculptureContainer'}

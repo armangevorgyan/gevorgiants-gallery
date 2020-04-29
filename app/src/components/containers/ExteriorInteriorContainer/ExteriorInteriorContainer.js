@@ -13,6 +13,7 @@ import Lightbox         from 'components/common/LightBox/Lightbox';
 // import ImagesGrid       from 'components/shared/ImagesGrid/ImagesGrid';
 
 import './ExteriorInteriorContainer.scss';
+import FacebookMetaTags from 'components/shared/FacebookMetaTags/FacebookMetaTags';
 
 
 @connect(
@@ -55,6 +56,10 @@ class ExteriorInteriorContainer extends Component {
 
     return <Fragment>
       <PageTitle title={translate('PAGE_TITLE.EXTERIORS_INTERIORS')} />
+      <FacebookMetaTags
+        url={'http://www.gevorginats.com/exteriors-interiors'}
+        title={translate('PAGE_TITLE.EXTERIORS_INTERIORS')}
+      />
       <Flex
         width={'100%'}
         className={'ExteriorInteriorContainer'}

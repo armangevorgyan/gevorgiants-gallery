@@ -13,8 +13,8 @@ import {RootCenterLoader} from 'components/shared/PageCenterLoader/PageCenterLoa
 import 'index.scss';
 
 
-console.log('App version: ' + (process.env.APP_VERSION || 'no_version'));
-console.log('Build environment: ' + process.env.ENV);
+// console.log('App version: ' + (process.env.APP_VERSION || 'no_version'));
+// console.log('Build environment: ' + process.env.ENV);
 
 ReactGA.initialize('UA-164938368-1');
 history.listen(location => {

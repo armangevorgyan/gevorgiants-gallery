@@ -3,9 +3,9 @@ import ReactDOM        from 'react-dom';
 import PropTypes       from 'prop-types';
 import ImageModifiers  from './ImageModifiers';
 import Icon            from './Icon';
-import {containsClass} from './utils/classNames';
+import {containsClass} from './utilities/classNames';
 
-import './Image.css';
+import 'components/common/LightBox/Image.scss';
 
 
 const ZOOM_STEP = 1.10;
