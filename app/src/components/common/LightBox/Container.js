@@ -13,6 +13,7 @@ const transitionDelta = 50;
 export default class Container extends React.Component {
   constructor(props) {
     super(props);
+    this.container = React.createRef();
     this.handleLeftClick = this.handleLeftClick.bind(this);
     this.handleRightClick = this.handleRightClick.bind(this);
     this.canMoveToLeft = this.canMoveToLeft.bind(this);
@@ -107,7 +108,7 @@ export default class Container extends React.Component {
   }
 
   toggleControls() {
-    classToggle(this.refs.container, 'hide-controls');
+    classToggle(this.container.current, 'hide-controls');
   }
 
   render() {
@@ -132,9 +133,9 @@ export default class Container extends React.Component {
         </div>
       );
     return (
-      <div className='lightbox-backdrop' ref='container'>
+      <div className='lightbox-backdrop' ref={this.container}>
         <div className='lightbox-btn-close'>
-          <Button icon="back-arrow" onClick={props.toggleLightbox} size={34} hasRipple={true} />
+          <Button icon="close" onClick={props.toggleLightbox} size={34} hasRipple={true} />
         </div>
         <div className='lightbox-title-content'>
           <div className='lightbox-title'>

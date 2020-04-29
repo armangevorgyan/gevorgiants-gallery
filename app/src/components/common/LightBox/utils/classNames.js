@@ -1,5 +1,5 @@
 export function classGetNames(element) {
-  if ((typeof element.className) !== 'string')
+  if ((typeof element?.className) !== 'string')
     return [];
   return element.className.split(/\s+/);
 }
@@ -16,8 +16,8 @@ export function containsClass(element, classNames) {
 }
 
 export function addClass(element, className) {
-  if (!containsClass(element, className)) {
-    element.className = [element.className, className].join(' ');
+  if (!containsClass(element, className) && element) {
+    element.className = [element?.className, className].join(' ');
   }
 }
 

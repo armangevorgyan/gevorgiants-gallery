@@ -19,7 +19,7 @@ const Navigation = ({location}) => <Flex
   width={'100%'}
   justify={'space-between'}
   align={'center'}
-  spaces={['pr-4', 'pl-4']}
+  spaces={[/*'pr-4',*/ 'pl-4']}
   className={'Navigation'}
 >
   <Flex
@@ -57,7 +57,7 @@ const Navigation = ({location}) => <Flex
   </Flex>
   <Flex
     hidden={{
-      md: 'down'
+      lg: 'down'
     }} width={218.5}
   />
 </Flex>;

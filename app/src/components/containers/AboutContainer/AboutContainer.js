@@ -57,11 +57,13 @@ class AboutContainer extends Component {
       >
 
         <Flex xs={12} row wrap>
+          <Flex hidden={{sm: 'down'}} md={1}/>
           <Flex
             column
             xs={12}
-            md={6}
-            lg={8}
+            md={5}
+            lg={7}
+            spaces={['pl-2', 'pr-2']}
           >
             <Exhibitions />
           </Flex>
@@ -70,6 +72,7 @@ class AboutContainer extends Component {
             xs={12}
             md={6}
             lg={4}
+            // spaces={['pl-2', 'pr-2']}
             align={'center'}
             // justify={'center'}
           >

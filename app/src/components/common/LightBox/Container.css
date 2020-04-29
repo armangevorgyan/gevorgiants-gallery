@@ -9,8 +9,8 @@ html.lightbox-open {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 100;
 }
 
@@ -41,7 +41,7 @@ html.lightbox-open {
 
 .lightbox-btn-close {
   position: fixed;
-  left: 0px;
+  right: 0;
   z-index: 2;
 }
 
@@ -49,14 +49,14 @@ html.lightbox-open {
   position: absolute;
   top: 50%;
   margin-top: -1.5em;
-  right: 0px;
+  right: 0;
 }
 
 .lightbox-btn-left {
   position: absolute;
   top: 50%;
   margin-top: -1.5em;
-  left: 0px;
+  left: 0;
 }
 
 @media (min-width: 768px) {

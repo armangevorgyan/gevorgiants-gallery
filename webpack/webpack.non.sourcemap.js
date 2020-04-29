@@ -7,8 +7,8 @@ const common = require('./webpack.common.js');
 module.exports = env => merge(common(env), {
   mode: 'production',
   performance: {
-    maxEntrypointSize: 1024000,
-    maxAssetSize: 1024000
+    maxEntrypointSize: 8112000,
+    maxAssetSize: 8112000
   },
   plugins: [
     new webpack.DefinePlugin({
