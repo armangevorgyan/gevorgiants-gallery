@@ -86,6 +86,7 @@
     "react-dom": "16.13.1",
     "react-dropzone": "10.2.1",
     "react-fast-compare": "3.0.1",
+    "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
     "react-onclickoutside": "6.9.0",
     "react-places-autocomplete": "7.2.1",

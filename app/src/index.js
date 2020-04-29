@@ -2,18 +2,26 @@ import React             from 'react';
 import ReactDOM          from 'react-dom';
 import {Provider}        from 'react-redux';
 import {ConnectedRouter} from 'connected-react-router';
+import ReactGA           from 'react-ga';
 
-import store, {history}         from 'store/store';
-import generalActions           from 'store/general/generalActions';
-import ApiEventHandler          from 'helpers/apiEventHandler';
+import store, {history} from 'store/store';
+import generalActions   from 'store/general/generalActions';
+import ApiEventHandler  from 'helpers/apiEventHandler';
 
-import {RootCenterLoader}       from 'components/shared/PageCenterLoader/PageCenterLoader';
+import {RootCenterLoader} from 'components/shared/PageCenterLoader/PageCenterLoader';
 
 import 'index.scss';
 
 
 console.log('App version: ' + (process.env.APP_VERSION || 'no_version'));
 console.log('Build environment: ' + process.env.ENV);
+
+ReactGA.initialize('UA-164938368-1');
+history.listen(location => {
+  ReactGA.pageview(location.pathname);
+});
+
+
 // console.log('Configs environment: ' + CONFIG_ENV);
 
 class Index extends React.Component {
@@ -33,11 +41,11 @@ class Index extends React.Component {
 
       await store.dispatch(generalActions.getCountries());
 
-      if ( !['/not-found'].includes(location.pathname) ) {
+      if (!['/not-found'].includes(location.pathname)) {
       }
 
 
-      const { default: App } = await import('components/App.js');
+      const {default: App} = await import('components/App.js');
 
       this.setState({
         App,
@@ -63,6 +71,7 @@ class Index extends React.Component {
     );
   }
 }
+
 
 ReactDOM.render(
   <Index />,
