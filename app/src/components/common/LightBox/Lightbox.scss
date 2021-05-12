@@ -21,7 +21,10 @@
   margin: 10px;
   cursor: pointer;
   width: 250px;
-  height: auto;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 @media (min-width: 768px) {

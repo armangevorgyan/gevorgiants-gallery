@@ -63,16 +63,19 @@ class Lightbox extends React.Component {
 Lightbox.defaultProps = {
   showImageModifiers: true,
   thumbnailWidth: '250px',
-  thumbnailHeight: 'auto',
+  thumbnailHeight: '250px',
   showTitle: true,
   renderImageFunc: (idx, image, toggleLightbox, width, height, showTitle) => {
     return (
       <div className={'lightbox-image-wrapper'} key={idx}>
-        <img
-          src={!!image.thumbnailSrc ? image.thumbnailSrc : image.src}
+        <div
+          // src={!!image.thumbnailSrc ? image.thumbnailSrc : image.src}
           className='lightbox-img-thumbnail'
-          style={{width: width, height: height}}
-          alt={image.title}
+          style={{
+            width: width,
+            height: height,
+            backgroundImage: !!image.thumbnailSrc ? `url(${image.thumbnailSrc})` : `url(${image.src})`,
+          }}
           onClick={toggleLightbox.bind(null, idx)}
         />
         {showTitle ? <p
