@@ -7,6 +7,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 let gallery_path = path.resolve(__dirname, '..');
 let app_path = path.resolve(gallery_path, 'app');
+// console.log(`Application ENV: ${env.ENV}`);
+// console.log(`Application main PATH: ${gallery_path}`);
+// console.log(`Application APP PATH: ${app_path}`);
 
 module.exports = env => {
   console.log(`Application ENV: ${env.ENV}`);
@@ -24,7 +27,8 @@ module.exports = env => {
       ],
       plugins: [
         new DirectoryNamedWebpackPlugin()
-      ]
+      ],
+      fallback: {path: require.resolve('path-browserify')}
     },
     stats: 'minimal', /*errors-only errors-warnings minimal none normal verbose*/
     entry: {
@@ -38,7 +42,7 @@ module.exports = env => {
     },
     output: {
       path: path.resolve(gallery_path, 'public'),
-      filename: '[name].[hash].bundle.js',
+      filename: '[name].[contenthash].bundle.js',
     },
     module: {
       rules: [
@@ -55,18 +59,29 @@ module.exports = env => {
         },
         {
           test: /\.s?[ac]ss$/,
-          exclude: [path.resolve(gallery_path,'node_modules/@sflpro')],
+          exclude: [path.resolve(gallery_path, 'node_modules/@sflpro')],
           use: [
             MiniCssExtractPlugin.loader,
-            {loader: 'css-loader', options: {sourceMap: true}},
             {
-              loader: 'resolve-url-loader',
+              loader: 'css-loader',
               options: {
-                sourceMap: true,
+                url: false,
+                modules: {
+                  compileType: 'icss'
+                },
+                sourceMap: true
               }
             },
-            {loader: 'postcss-loader'},
-            {loader: 'sass-loader', options: {sourceMap: true}}
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            {
+              loader: 'resolve-url-loader',
+            },
+            {
+              loader: 'sass-loader', options: {
+                implementation: require('sass'),
+                sourceMap: true
+              }
+            }
           ],
         },
         {
@@ -89,9 +104,10 @@ module.exports = env => {
             {
               loader: 'postcss-loader',
               options: {
-                config: {
-                  path: path.resolve(gallery_path, 'postcss.config.js'),
-                },
+                  postcssOptions: {
+                    config: path.resolve(gallery_path, 'postcss.config.js'),
+                  },
+                  sourceMap: true
               },
             },
           ],
@@ -99,7 +115,7 @@ module.exports = env => {
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           options: {
-            name: '[path][name].[hash].[ext]',
+            name: '[path][name].[contenthash].[ext]',
             context: path.resolve(app_path, 'src'),
           },
           loader: 'file-loader',
@@ -107,12 +123,18 @@ module.exports = env => {
         {
           test: /\.icon\.svg$/,
           loader: 'inline-loader',
+          include: [
+            path.resolve('node_modules/@sflpro/dresscode/lib/Icon/svgSprite.icon.svg')
+          ],
         },
         {
           test: /\.(png|jpg|gif|ico|svg)$/,
           loader: 'file-loader',
+          exclude: [
+            path.resolve('node_modules/@sflpro/dresscode/lib/Icon/svgSprite.icon.svg'),
+          ],
           options: {
-            name: '[path][name].[hash].[ext]',
+            name: '[path][name].[contenthash].[ext]',
             context: path.resolve(app_path, 'src'),
           },
         },
@@ -156,15 +178,17 @@ module.exports = env => {
         },
       }),
       new MiniCssExtractPlugin({
-        filename: 'styles.[hash].css'
+        filename: 'styles.[contenthash].css'
       }),
       require('autoprefixer'),
-      new CopyPlugin([
-        {
-          from: path.resolve(app_path, 'src/assets'),
-          to: 'assets/'
-        },
-      ]),
+      new CopyPlugin({
+        patterns :[
+          {
+            from: path.resolve(app_path, 'src/assets'),
+            to: 'assets/'
+          },
+        ]
+      }),
     ],
   };
 };

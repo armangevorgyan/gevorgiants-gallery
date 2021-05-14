@@ -192,13 +192,13 @@ export const Sculptures = [
     src: assetGallery('sculpture/images/028.jpg'),
     thumbnailSrc: assetGallery('sculpture/thumbnails/028.jpg')
   },
-  {
-    uuid: '198d43b1-967a-4a48-b94f-b58856601d86',
-    title: 'Borders, 1988',
-    description: '',
-    src: assetGallery('sculpture/images/029.jpg'),
-    thumbnailSrc: assetGallery('sculpture/thumbnails/029.jpg')
-  },
+  // {
+  //   uuid: '198d43b1-967a-4a48-b94f-b58856601d86',
+  //   title: 'Borders, 1988',
+  //   description: '',
+  //   src: assetGallery('sculpture/images/029.jpg'),
+  //   thumbnailSrc: assetGallery('sculpture/thumbnails/029.jpg')
+  // },
   {
     uuid: 'afb8c8f3-bce7-4ff0-b2b1-84f19644a068',
     title: 'Way, 1989',

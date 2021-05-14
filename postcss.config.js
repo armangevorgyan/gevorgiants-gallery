@@ -1,6 +1,7 @@
 module.exports = {
-  plugins: {
-    'postcss-mixins': {
+  plugins: [
+    require('autoprefixer'),
+    require('postcss-mixins')( {
       mixinsFiles: [
         // 'node_modules/@sflpro/dresscode/lib/mixins/grid.css',
         // 'node_modules/@sflpro/dresscode/lib/mixins/typography.css',
@@ -8,8 +9,8 @@ module.exports = {
         './app/src/assets/css/fonts.css',
         // './static/assets/css/customMixins.css',
       ],
-    },
-    'postcss-preset-env': {
+    }) ,
+    require('postcss-preset-env')({
       importFrom: [
         // 'node_modules/@sflpro/dresscode/lib/defaults.css',
         // 'node_modules/@sflpro/dresscode/lib/colorScheme.css',
@@ -26,6 +27,6 @@ module.exports = {
         },
         'custom-media-queries': true,
       },
-    },
-  },
+    }),
+  ],
 };
