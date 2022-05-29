@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+
+        <loc>https://gevorgiants.com/</loc>
+
+        <lastmod>2022-05-29</lastmod>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+
+    <url>
+
+        <loc>https://gevorgiants.com/home</loc>
+
+        <changefreq>monthly</changefreq>
+
+    </url>
+
+    <url>
+
+        <loc>https://gevorgiants.com/sculptures</loc>
+
+        <lastmod>2022-05-29</lastmod>
+
+        <changefreq>weekly</changefreq>
+
+    </url>
+
+    <url>
+
+        <loc>https://gevorgiants.com/paintings</loc>
+
+        <lastmod>2022-05-29</lastmod>
+
+        <changefreq>weekly</changefreq>
+
+    </url>
+
+    <url>
+
+        <loc>https://gevorgiants.com/exteriors-interiors</loc>
+
+        <lastmod>2022-05-29</lastmod>
+
+        <changefreq>weekly</changefreq>
+
+    </url>
+
+    <url>
+
+        <loc>https://gevorgiants.com/publications</loc>
+
+        <lastmod>2022-05-29</lastmod>
+
+        <changefreq>weekly</changefreq>
+
+    </url>
+
+    <url>
+
+        <loc>https://gevorgiants.com/about</loc>
+
+        <lastmod>2022-05-29</lastmod>
+
+        <changefreq>weekly</changefreq>
+
+    </url>
+
+</urlset>

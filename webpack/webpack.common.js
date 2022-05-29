@@ -187,6 +187,10 @@ module.exports = env => {
             from: path.resolve(app_path, 'src/assets'),
             to: 'assets/'
           },
+          {
+            from: './sitemap.xml',
+            to:'sitemap.xml'
+          }
         ]
       }),
     ],
