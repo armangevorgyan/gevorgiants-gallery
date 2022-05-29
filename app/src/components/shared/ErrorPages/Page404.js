@@ -7,22 +7,23 @@ import Text      from 'components/common/Text/Text';
 import Translate from 'components/common/Translate/Translate';
 import Image     from 'components/common/Image/Image';
 
+import './Page404.scss';
 
 const Page404 = () => {
   return (
     <Flex
+      className={'Page404Container'}
       width={'100vw'}
       height={'100vh'}
       align={'center'}
       justify={'center'}
     >
-      asfdsfds
       <Flex
         column
         spaces={['pb-11']}
         align={'center'}
       >
-        <Flex width={280}>
+        <Flex width={280} height={220}>
           <Image source={asset('images/aniv.png')}/>
         </Flex>
         <Flex spaces={['mt-6']}>
@@ -30,18 +31,13 @@ const Page404 = () => {
             <Translate>ERRORS.SOMETHING_WENT_WRONG</Translate>
           </Text>
         </Flex>
-        <Flex spaces={['mt-4']}>
-          <Text color={'gallery-black'} size={'scale-6'}>
-            <Translate>ERRORS.CANT_FIND_PAGE</Translate>
-          </Text>
-        </Flex>
-        <Flex spaces={['mt-9']} width={250}>
+        <Flex spaces={['mt-2']} width={250}>
           <button
-            className={'fluid'}
+            className={'fluid home-button'}
             onClick={() => location.href = '/'}
           >
             <Text>
-              <Translate>BUTTON_LABELS.HOME</Translate>
+              <Translate>BUTTON_LABELS.BACK_TO_HOME</Translate>
             </Text>
           </button>
         </Flex>

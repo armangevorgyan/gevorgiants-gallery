@@ -4,7 +4,8 @@
   "PLACEHOLDER": {
   },
   "BUTTON_LABELS": {
-    "HOME": "Home"
+    "HOME": "Home",
+    "BACK_TO_HOME": "Back To Home Page"
   },
   "ERRORS": {
     "SOMETHING_WENT_WRONG": "Something went wrong",
