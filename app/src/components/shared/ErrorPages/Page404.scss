@@ -1,0 +1,13 @@
+@import "styles/colors.scss";
+
+.Page404Container {
+  .home-button{
+    display: flex;
+    justify-content: center;
+    color: $yellow-500;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+  }
+}
