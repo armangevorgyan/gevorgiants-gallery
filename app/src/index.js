@@ -7,7 +7,7 @@ import ReactGA             from 'react-ga';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp }   from 'firebase/app';
-import { getAnalytics }    from 'firebase/analytics';
+import { getAnalytics, logEvent }    from 'firebase/analytics';
 
 import store, { history } from 'store/store';
 import generalActions     from 'store/general/generalActions';
@@ -25,14 +25,13 @@ const firebaseConfig = {
   storageBucket: 'gevorgiants.appspot.com',
   messagingSenderId: '487364418725',
   appId: '1:487364418725:web:357ba6efbd3a4dc9d0414c',
-  measurementId: 'G-0QYJXJTSC4'
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-analytics.app.automaticDataCollectionEnabled;
+logEvent(analytics, 'notification_received');
 // console.log('App version: ' + (process.env.APP_VERSION || 'no_version'));
 // console.log('Build environment: ' + process.env.ENV);
 
