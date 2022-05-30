@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const {merge} = require('webpack-merge');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common.js');
 
 
@@ -14,8 +14,8 @@ module.exports = env => merge(common(env), {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(env)
     }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessorPluginOptions: {
+    new CssMinimizerPlugin({
+      minimizerOptions: {
         preset: ['default', { discardComments: { removeAll: true } }],
       }
     })

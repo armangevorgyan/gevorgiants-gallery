@@ -1,18 +1,38 @@
-import React             from 'react';
-import ReactDOM          from 'react-dom';
-import {Provider}        from 'react-redux';
-import {ConnectedRouter} from 'connected-react-router';
-import ReactGA           from 'react-ga';
+import React               from 'react';
+import ReactDOM            from 'react-dom';
+import { Provider }        from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import ReactGA             from 'react-ga';
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp }   from 'firebase/app';
+import { getAnalytics }    from 'firebase/analytics';
 
-import store, {history} from 'store/store';
-import generalActions   from 'store/general/generalActions';
-import ApiEventHandler  from 'helpers/apiEventHandler';
+import store, { history } from 'store/store';
+import generalActions     from 'store/general/generalActions';
+import ApiEventHandler    from 'helpers/apiEventHandler';
 
-import {RootCenterLoader} from 'components/shared/PageCenterLoader/PageCenterLoader';
+import { RootCenterLoader } from 'components/shared/PageCenterLoader/PageCenterLoader';
 
 import 'index.scss';
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: 'AIzaSyAqvEMUII1LyHhTjSPKBng1dzOtd8QLiCQ',
+  authDomain: 'gevorgiants.firebaseapp.com',
+  projectId: 'gevorgiants',
+  storageBucket: 'gevorgiants.appspot.com',
+  messagingSenderId: '487364418725',
+  appId: '1:487364418725:web:357ba6efbd3a4dc9d0414c',
+  measurementId: 'G-0QYJXJTSC4'
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+analytics.app.automaticDataCollectionEnabled;
 // console.log('App version: ' + (process.env.APP_VERSION || 'no_version'));
 // console.log('Build environment: ' + process.env.ENV);
 
@@ -27,7 +47,7 @@ history.listen(location => {
 class Index extends React.Component {
   state = {
     isLoading: true,
-    App: null,
+    App: null
   };
 
   async componentDidMount() {
@@ -45,11 +65,11 @@ class Index extends React.Component {
       }
 
 
-      const {default: App} = await import('components/App.js');
+      const { default: App } = await import('components/App.js');
 
       this.setState({
         App,
-        isLoading: false,
+        isLoading: false
       });
     } catch (e) {
       console.log(e);
@@ -59,13 +79,13 @@ class Index extends React.Component {
   render() {
     const {
       isLoading,
-      App,
+      App
     } = this.state;
 
     return (
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          {!isLoading && <App /> || <RootCenterLoader />}
+      <Provider store={ store }>
+        <ConnectedRouter history={ history }>
+          { !isLoading && <App/> || <RootCenterLoader/> }
         </ConnectedRouter>
       </Provider>
     );
@@ -74,6 +94,6 @@ class Index extends React.Component {
 
 
 ReactDOM.render(
-  <Index />,
+  <Index/>,
   document.getElementById('root')
 );
