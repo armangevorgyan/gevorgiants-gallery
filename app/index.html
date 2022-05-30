@@ -17,9 +17,33 @@
   <meta property="og:image" content='http://gevorgiants.com/assets/images/aniv.png' />
   <meta property="fb:app_id" content='1124089411262429' />
   <!--Facebook: end-->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Google: start -->
+  <meta name="url" content='http://www.gevorgiants.com' />
+  <meta name="type" content='article' />
+  <meta name="title" content='Gevorgiants Gallery' />
+  <meta name="description" content='Personal website of Armen Gevorgiants. Sculptures, Paintings and Interior Gallery' />
+  <meta name="image" content='http://gevorgiants.com/assets/images/aniv.png' />
+  <!-- Google: end -->
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1124089411262429',
+      xfbml      : true,
+      version    : 'v14.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 <div id="root" class="notranslate"></div>
 </body>
 </html>
