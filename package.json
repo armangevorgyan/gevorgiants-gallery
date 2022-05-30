@@ -54,7 +54,7 @@
     "identity-obj-proxy": "3.0.0",
     "inline-loader": "0.1.1",
     "mini-css-extract-plugin": "1.6.0",
-    "node-sass": "6.0.0",
+    "node-sass": "7.0.0",
     "postcss": "8.2.15",
     "postcss-loader": "5.2.0",
     "postcss-mixins": "7.0.3",
