@@ -3,12 +3,11 @@ import ReactDOM            from 'react-dom';
 import { Provider }        from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import ReactGA             from 'react-ga';
-// Import the functions you need from the SDKs you need
-// TODO: Add SDKs for Firebase products that you want to use
+// Firebase: Start
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp }   from 'firebase/app';
 import { getAnalytics, logEvent }    from 'firebase/analytics';
-
+// Firebase: End
 import store, { history } from 'store/store';
 import generalActions     from 'store/general/generalActions';
 import ApiEventHandler    from 'helpers/apiEventHandler';
@@ -20,7 +19,7 @@ import 'index.scss';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyAqvEMUII1LyHhTjSPKBng1dzOtd8QLiCQ',
-  authDomain: 'gevorgiants.firebaseapp.com',
+  authDomain: 'gevorgiants.com',
   projectId: 'gevorgiants',
   storageBucket: 'gevorgiants.appspot.com',
   messagingSenderId: '487364418725',
@@ -30,7 +29,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
 logEvent(analytics, 'notification_received');
 // console.log('App version: ' + (process.env.APP_VERSION || 'no_version'));
 // console.log('Build environment: ' + process.env.ENV);
